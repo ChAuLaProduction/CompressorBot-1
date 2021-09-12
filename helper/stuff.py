@@ -36,6 +36,7 @@ async def start(event):
                 Button.url("SOURCE CODE", url="github.com/1Danish-00/CompressorBot"),
                 Button.url("DEVELOPER", url="t.me/danish_00"),
             ],
+            [Button.url("ChAuLa's Bots", url="t.me/chaulabots")],
         ],
     )
 
