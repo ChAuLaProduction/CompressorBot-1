@@ -208,19 +208,19 @@ async def encod(event):
             oc = event.fwd_from.from_id.user_id
             occ = (await event.client.get_me()).id
             if oc == occ:
-                return await event.reply("`This Video File is already Compressed 😑😑.`")
+                return await event.reply("`This Video File is already Compressed.`")
         except BaseException:
             pass
         xxx = await event.reply("`Downloading...`")
         """ For Force Subscribe Channel"""
-        # pp = []
-        # async for x in event.client.iter_participants("put group username"):
-        #    pp.append(x.id)
-        # if (user.id) not in pp:
-        #    return await xxx.edit(
-        #        "U Must Subscribe This Channel To Use This Bot",
-        #       buttons=[Button.url("JOIN CHANNEL", url="put group link")],
-        #   )
+         pp = []
+         async for x in event.client.iter_participants("put group username"):
+            pp.append(x.id)
+         if (user.id) not in pp:
+            return await xxx.edit(
+                "Please Subscribe This Channel To Use This Bot",
+               buttons=[Button.url("JOIN CHANNEL", url="t.me/chaulabots")],
+           )
         if len(COUNT) > 4 and user.id != OWNER:
             llink = (await event.client(cl(LOG))).link
             return await xxx.edit(
