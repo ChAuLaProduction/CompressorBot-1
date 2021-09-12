@@ -33,7 +33,7 @@ async def start(event):
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/CompressorBot"),
+                Button.url("CODE", url="github.com/1Danish-00/CompressorBot"),
                 Button.url("DEVELOPER", url="t.me/danish_00"),
             ],
             [Button.url("ChAuLa's Bots", url="t.me/chaulabots")],
@@ -43,13 +43,13 @@ async def start(event):
 
 async def help(event):
     await event.reply(
-        "**🐠 A Quality CompressorBot**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options"
+        "A Quality CompressorBot**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options"
     )
 
 
 async def ihelp(event):
     await event.edit(
-        "**🐠 A Quality CompressorBot**\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Screenshots Too\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options",
+        "A Quality Compressor Bot\n\n+This Bot Compress Videos With Negligible Quality Change.\n+Generate Sample Compressed Video\n+Screenshots Too\n+Easy to Use\n-Due to Quality Settings Bot Takes Time To Compress.\nSo Be patience Nd Send videos One By One After Completing.\nDont Spam Bot.\n\nJust Forward Video To Get Options",
         buttons=[Button.inline("BACK", data="beck")],
     )
 
@@ -61,7 +61,7 @@ async def beck(event):
         buttons=[
             [Button.inline("HELP", data="ihelp")],
             [
-                Button.url("SOURCE CODE", url="github.com/1Danish-00/"),
+                Button.url("CODE", url="github.com/1Danish-00/"),
                 Button.url("DEVELOPER", url="t.me/danish_00"),
             ],
         ],
@@ -85,10 +85,10 @@ async def sencc(e):
 async def back(e):
     key = e.pattern_match.group(1).decode("UTF-8")
     await e.edit(
-        "🐠  **What To Do** 🐠",
+        "Choose Options",
         buttons=[
             [
-                Button.inline("GENERATE SAMPLE", data=f"gsmpl{key}"),
+                Button.inline("SAMPLE", data=f"gsmpl{key}"),
                 Button.inline("SCREENSHOTS", data=f"sshot{key}"),
             ],
             [Button.inline("COMPRESS", data=f"sencc{key}")],
@@ -97,7 +97,7 @@ async def back(e):
 
 
 async def ccom(e):
-    await e.edit("Send Ur Custom Name For That File")
+    await e.edit("Send a Custom Name For The File")
     wah = e.pattern_match.group(1).decode("UTF-8")
     wh = decode(wah)
     out, dl, thum, dtime = wh.split(";")
@@ -112,7 +112,7 @@ async def ccom(e):
             g = repl.text + ".mkv"
         outt = f"encode/{chat}/{g}"
         x = await repl.reply(
-            f"Custom File Name : {g}\n\nSend Thumbnail Picture For it."
+            f"Custom File Name : {g}\n\nSend a Thumbnail Picture For it."
         )
         replyy = cv.wait_event(events.NewMessage(from_users=chat))
         rep = await replyy
