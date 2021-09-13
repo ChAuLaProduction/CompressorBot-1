@@ -3,3 +3,4 @@ build:
     worker: Dockerfile
 run:
   worker: bash run.sh
+heroku stack:set container
